@@ -1,0 +1,21 @@
+function smallestMult(n) {
+  let numbertocheck = n;
+  let found=false;
+
+  while(!found){
+    if(checkDivisors(++numbertocheck,n)){
+      found=true;
+    }
+  }
+  return numbertocheck;
+}
+
+function checkDivisors(numbertoCheck,number){
+  for(let i=1;i<=number;i++){
+    if(numbertoCheck % i !== 0){
+      return false;
+    }
+  }
+  return true;
+}
+console.log(smallestMult(7));
