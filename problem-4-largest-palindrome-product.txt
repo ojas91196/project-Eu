@@ -1,0 +1,20 @@
+function largestPalindromeProduct(n) {
+const palindromes=[];
+//biggets n-digit number #999
+const number=+Array(n).fill(9).join('');
+let largest=1;
+for(let i=number;i>1;i--){
+  for(let j=number;j>1;j--){
+    const mult=i*j;
+    if(isPalindrome(mult)){
+      palindromes.push(mult);
+    }
+  }
+}
+return Math.max(...palindromes);
+}
+
+function isPalindrome(number){
+  return number.toString() === number.toString().split('').reverse().join('');
+}
+console.log(largestPalindromeProduct(3));
