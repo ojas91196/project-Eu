@@ -1,0 +1,21 @@
+function sumSquareDifference(n) {
+  return SqOSum(n)-SumOSquare(n);
+}
+
+function SumOSquare(n){
+  let sum=0;
+  for(let i=1;i<=n;i++){
+    sum += i**2;
+  }
+  return sum;
+}
+
+function SqOSum(n){
+  let sum=0;
+  for(let i=1;i<=n;i++){
+    sum+=i;
+  }
+  return sum**2;
+}
+
+sumSquareDifference(10);
