@@ -1,0 +1,15 @@
+function sumSquareDifference(n) {
+  return SqOSum(n)-SumOfSq(n);
+}
+
+function SumOfSq(n){
+  const sum=(n*(n+1)*(2*n+1))/6;
+  return sum;
+}
+
+function SqOSum(n){
+  const sum = (n*(n+1))/2;
+  return sum**2;
+}
+
+sumSquareDifference(100);
