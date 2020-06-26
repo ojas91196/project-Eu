@@ -1,0 +1,21 @@
+function specialPythagoreanTriplet(n) {
+ let sumOfabc = n;
+for(let a=1;a<n;a++){
+  for(let b=a+1;b<n;b++){
+//    for(let c=b+1;c<n;c++){
+// another for loop may give timeout error
+    const c=n-b-a; 
+      if (isTriplet(a,b,c) && (a+b+c ===n)){
+        return a*b*c;        
+      }
+  }
+}
+return 1;
+}
+
+function isTriplet(a,b,c){
+  //console.log(a,b,c);
+  return a**2+b**2===c**2;
+}
+
+console.log(specialPythagoreanTriplet(120));
