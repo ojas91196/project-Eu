@@ -1,0 +1,25 @@
+function primeSummation(n) {
+  let summation=0;
+  for(let i=2;i<n;i++){
+    if(isPrime(i)){
+      summation+=i;
+    }
+  }
+  // Good luck!
+  return summation;
+}
+
+function isPrime(num){
+  if(num%2==0 && num!=2) {
+    return false;
+  }
+  for(let i=3;i<=num**0.5;i+=2){
+    if(num%i===0){
+      return false;
+    }
+  }
+  return true;
+}
+
+//console.log(isPrime(7));
+console.log(primeSummation(10));
