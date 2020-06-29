@@ -1,0 +1,28 @@
+function longestCollatzSequence(limit) {
+let number=2;
+let maxcount=0;
+for(let i=2;i<=limit;i++){
+  const terms=countterms(i);
+  if (terms>maxcount){
+    maxcount=terms;
+    number=i;
+  }
+}
+return number;
+}
+
+function countterms(num){
+  if(num===1) return 1;
+  let len=0;
+  while(num!==1){
+    if(num%2===0){
+      num/=2;
+    }else{
+      num=num*3+1;
+    }
+    len++;
+  }
+  return len;
+}
+
+console.log(longestCollatzSequence(14));
